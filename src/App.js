@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Link, Switch } from 'react-router-dom'
 import axios from 'axios'
-import * as yup from "yup"
-import schema from "./formSchema"
+import schema from "./Schema"
 import LandingPage from "./LandingPage"
 import Pizza from './Pizza'
 
@@ -46,7 +45,7 @@ const App = () => {
       .then(valid => {
         setDisabled(!valid)
       })
-  }, [formValues])
+  }, [toppingValues])
 
   const addPizza = () => {
     axios
@@ -71,11 +70,15 @@ const App = () => {
       <Link to="/Pizza">Click for pizza</Link>
     <Switch>
     <Route path="/Pizza">
-        <Pizza values={toppingValues} updateThePizza={updateThePizza} submitThePizza={addPizza} disabled={disabled} />
+        <Pizza 
+          values={toppingValues} 
+          updateThePizza={updateThePizza} 
+          submitThePizza={addPizza} 
+          disabled={disabled} />
       </Route>
       
       <Route path="/">
-        <Home />
+        <LandingPage />
       </Route>
       
     </Switch>
