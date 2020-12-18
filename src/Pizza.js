@@ -1,5 +1,5 @@
-import React from 'core-js/library/fn/reflect/es7/metadata'
-import * as Reflect from 'core-js/es6'
+import React from 'react'
+
 
 export default function Pizza(props) {
     const { values, updateThePizza, submitThePizza, disabled, errors } = props
