@@ -75,12 +75,7 @@ const App = () => {
       </Route>
       
       <Route path="/">
-        <Form 
-          values={formValues}
-          update={updateThePizza}
-          submit={submitThePizza}
-
-        />
+        <Home />
       </Route>
       
     </Switch>
